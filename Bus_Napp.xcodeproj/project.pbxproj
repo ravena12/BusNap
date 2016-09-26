@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E505BDA1D9988B400120F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BD91D9988B400120F06 /* AppDelegate.swift */; };
+		8E505BDC1D9988B400120F06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BDB1D9988B400120F06 /* ViewController.swift */; };
+		8E505BDF1D9988B400120F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E505BDD1D9988B400120F06 /* Main.storyboard */; };
+		8E505BE21D9988B400120F06 /* Bus_Napp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BE01D9988B400120F06 /* Bus_Napp.xcdatamodeld */; };
+		8E505BE41D9988B400120F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E505BE31D9988B400120F06 /* Assets.xcassets */; };
+		8E505BE71D9988B400120F06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E505BE51D9988B400120F06 /* LaunchScreen.storyboard */; };
+		8E505BF21D9988B400120F06 /* Bus_NappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BF11D9988B400120F06 /* Bus_NappTests.swift */; };
+		8E505BFD1D9988B400120F06 /* Bus_NappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BFC1D9988B400120F06 /* Bus_NappUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E505BEE1D9988B400120F06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E505BCE1D9988B400120F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E505BD51D9988B400120F06;
+			remoteInfo = Bus_Napp;
+		};
+		8E505BF91D9988B400120F06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E505BCE1D9988B400120F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E505BD51D9988B400120F06;
+			remoteInfo = Bus_Napp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E505BD61D9988B400120F06 /* Bus_Napp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bus_Napp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E505BD91D9988B400120F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E505BDB1D9988B400120F06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E505BDE1D9988B400120F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E505BE11D9988B400120F06 /* Bus_Napp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bus_Napp.xcdatamodel; sourceTree = "<group>"; };
+		8E505BE31D9988B400120F06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E505BE61D9988B400120F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E505BE81D9988B400120F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E505BED1D9988B400120F06 /* Bus_NappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bus_NappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E505BF11D9988B400120F06 /* Bus_NappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus_NappTests.swift; sourceTree = "<group>"; };
+		8E505BF31D9988B400120F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E505BF81D9988B400120F06 /* Bus_NappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bus_NappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E505BFC1D9988B400120F06 /* Bus_NappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus_NappUITests.swift; sourceTree = "<group>"; };
+		8E505BFE1D9988B400120F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E505BD31D9988B400120F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E505BEA1D9988B400120F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E505BF51D9988B400120F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E505BCD1D9988B400120F06 = {
+			isa = PBXGroup;
+			children = (
+				8E505BD81D9988B400120F06 /* Bus_Napp */,
+				8E505BF01D9988B400120F06 /* Bus_NappTests */,
+				8E505BFB1D9988B400120F06 /* Bus_NappUITests */,
+				8E505BD71D9988B400120F06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E505BD71D9988B400120F06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E505BD61D9988B400120F06 /* Bus_Napp.app */,
+				8E505BED1D9988B400120F06 /* Bus_NappTests.xctest */,
+				8E505BF81D9988B400120F06 /* Bus_NappUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E505BD81D9988B400120F06 /* Bus_Napp */ = {
+			isa = PBXGroup;
+			children = (
+				8E505BD91D9988B400120F06 /* AppDelegate.swift */,
+				8E505BDB1D9988B400120F06 /* ViewController.swift */,
+				8E505BDD1D9988B400120F06 /* Main.storyboard */,
+				8E505BE31D9988B400120F06 /* Assets.xcassets */,
+				8E505BE51D9988B400120F06 /* LaunchScreen.storyboard */,
+				8E505BE81D9988B400120F06 /* Info.plist */,
+				8E505BE01D9988B400120F06 /* Bus_Napp.xcdatamodeld */,
+			);
+			path = Bus_Napp;
+			sourceTree = "<group>";
+		};
+		8E505BF01D9988B400120F06 /* Bus_NappTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E505BF11D9988B400120F06 /* Bus_NappTests.swift */,
+				8E505BF31D9988B400120F06 /* Info.plist */,
+			);
+			path = Bus_NappTests;
+			sourceTree = "<group>";
+		};
+		8E505BFB1D9988B400120F06 /* Bus_NappUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8E505BFC1D9988B400120F06 /* Bus_NappUITests.swift */,
+				8E505BFE1D9988B400120F06 /* Info.plist */,
+			);
+			path = Bus_NappUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E505BD51D9988B400120F06 /* Bus_Napp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E505C011D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_Napp" */;
+			buildPhases = (
+				8E505BD21D9988B400120F06 /* Sources */,
+				8E505BD31D9988B400120F06 /* Frameworks */,
+				8E505BD41D9988B400120F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bus_Napp;
+			productName = Bus_Napp;
+			productReference = 8E505BD61D9988B400120F06 /* Bus_Napp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E505BEC1D9988B400120F06 /* Bus_NappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E505C041D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_NappTests" */;
+			buildPhases = (
+				8E505BE91D9988B400120F06 /* Sources */,
+				8E505BEA1D9988B400120F06 /* Frameworks */,
+				8E505BEB1D9988B400120F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E505BEF1D9988B400120F06 /* PBXTargetDependency */,
+			);
+			name = Bus_NappTests;
+			productName = Bus_NappTests;
+			productReference = 8E505BED1D9988B400120F06 /* Bus_NappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8E505BF71D9988B400120F06 /* Bus_NappUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E505C071D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_NappUITests" */;
+			buildPhases = (
+				8E505BF41D9988B400120F06 /* Sources */,
+				8E505BF51D9988B400120F06 /* Frameworks */,
+				8E505BF61D9988B400120F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E505BFA1D9988B400120F06 /* PBXTargetDependency */,
+			);
+			name = Bus_NappUITests;
+			productName = Bus_NappUITests;
+			productReference = 8E505BF81D9988B400120F06 /* Bus_NappUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E505BCE1D9988B400120F06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Charlotte Abrams";
+				TargetAttributes = {
+					8E505BD51D9988B400120F06 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					8E505BEC1D9988B400120F06 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8E505BD51D9988B400120F06;
+					};
+					8E505BF71D9988B400120F06 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8E505BD51D9988B400120F06;
+					};
+				};
+			};
+			buildConfigurationList = 8E505BD11D9988B400120F06 /* Build configuration list for PBXProject "Bus_Napp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E505BCD1D9988B400120F06;
+			productRefGroup = 8E505BD71D9988B400120F06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E505BD51D9988B400120F06 /* Bus_Napp */,
+				8E505BEC1D9988B400120F06 /* Bus_NappTests */,
+				8E505BF71D9988B400120F06 /* Bus_NappUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E505BD41D9988B400120F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E505BE71D9988B400120F06 /* LaunchScreen.storyboard in Resources */,
+				8E505BE41D9988B400120F06 /* Assets.xcassets in Resources */,
+				8E505BDF1D9988B400120F06 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E505BEB1D9988B400120F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E505BF61D9988B400120F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E505BD21D9988B400120F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E505BE21D9988B400120F06 /* Bus_Napp.xcdatamodeld in Sources */,
+				8E505BDC1D9988B400120F06 /* ViewController.swift in Sources */,
+				8E505BDA1D9988B400120F06 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E505BE91D9988B400120F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E505BF21D9988B400120F06 /* Bus_NappTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E505BF41D9988B400120F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E505BFD1D9988B400120F06 /* Bus_NappUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E505BEF1D9988B400120F06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E505BD51D9988B400120F06 /* Bus_Napp */;
+			targetProxy = 8E505BEE1D9988B400120F06 /* PBXContainerItemProxy */;
+		};
+		8E505BFA1D9988B400120F06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E505BD51D9988B400120F06 /* Bus_Napp */;
+			targetProxy = 8E505BF91D9988B400120F06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E505BDD1D9988B400120F06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E505BDE1D9988B400120F06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E505BE51D9988B400120F06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E505BE61D9988B400120F06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E505BFF1D9988B400120F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E505C001D9988B400120F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E505C021D9988B400120F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bus_Napp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-Napp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8E505C031D9988B400120F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bus_Napp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-Napp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8E505C051D9988B400120F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Bus_NappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-NappTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bus_Napp.app/Bus_Napp";
+			};
+			name = Debug;
+		};
+		8E505C061D9988B400120F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Bus_NappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-NappTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bus_Napp.app/Bus_Napp";
+			};
+			name = Release;
+		};
+		8E505C081D9988B400120F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Bus_NappUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-NappUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Bus_Napp;
+			};
+			name = Debug;
+		};
+		8E505C091D9988B400120F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Bus_NappUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-NappUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Bus_Napp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E505BD11D9988B400120F06 /* Build configuration list for PBXProject "Bus_Napp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E505BFF1D9988B400120F06 /* Debug */,
+				8E505C001D9988B400120F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E505C011D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_Napp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E505C021D9988B400120F06 /* Debug */,
+				8E505C031D9988B400120F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8E505C041D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_NappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E505C051D9988B400120F06 /* Debug */,
+				8E505C061D9988B400120F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8E505C071D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_NappUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E505C081D9988B400120F06 /* Debug */,
+				8E505C091D9988B400120F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E505BE01D9988B400120F06 /* Bus_Napp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E505BE11D9988B400120F06 /* Bus_Napp.xcdatamodel */,
+			);
+			currentVersion = 8E505BE11D9988B400120F06 /* Bus_Napp.xcdatamodel */;
+			path = Bus_Napp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8E505BCE1D9988B400120F06 /* Project object */;
+}
