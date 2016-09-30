@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75506FAB1D9B821D000850EB /* SongDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75506FAA1D9B821D000850EB /* SongDelegate.swift */; };
+		75506FAE1D9C4176000850EB /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75506FAC1D9C4176000850EB /* Location+CoreDataProperties.swift */; };
+		75506FAF1D9C4176000850EB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75506FAD1D9C4176000850EB /* Location.swift */; };
+		75D3D7471D9EFF5400ED8853 /* Bells.wav in Resources */ = {isa = PBXBuildFile; fileRef = 75D3D7461D9EFF5400ED8853 /* Bells.wav */; };
+		75D3D7491D9EFF6100ED8853 /* Elegant.wav in Resources */ = {isa = PBXBuildFile; fileRef = 75D3D7481D9EFF6100ED8853 /* Elegant.wav */; };
+		75D3D74B1D9EFF7A00ED8853 /* Loving You.wav in Resources */ = {isa = PBXBuildFile; fileRef = 75D3D74A1D9EFF7A00ED8853 /* Loving You.wav */; };
+		75D3D74D1D9EFF8000ED8853 /* Soft.wav in Resources */ = {isa = PBXBuildFile; fileRef = 75D3D74C1D9EFF8000ED8853 /* Soft.wav */; };
+		75D3D74F1D9EFF9300ED8853 /* Sphere.wav in Resources */ = {isa = PBXBuildFile; fileRef = 75D3D74E1D9EFF9300ED8853 /* Sphere.wav */; };
+		75D3D7511D9EFFDA00ED8853 /* Hotline Bling Marimba.wav in Resources */ = {isa = PBXBuildFile; fileRef = 75D3D7501D9EFFDA00ED8853 /* Hotline Bling Marimba.wav */; };
 		8E505BDA1D9988B400120F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BD91D9988B400120F06 /* AppDelegate.swift */; };
-		8E505BDC1D9988B400120F06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BDB1D9988B400120F06 /* ViewController.swift */; };
+		8E505BDC1D9988B400120F06 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BDB1D9988B400120F06 /* MapViewController.swift */; };
 		8E505BDF1D9988B400120F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E505BDD1D9988B400120F06 /* Main.storyboard */; };
 		8E505BE21D9988B400120F06 /* Bus_Napp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BE01D9988B400120F06 /* Bus_Napp.xcdatamodeld */; };
 		8E505BE41D9988B400120F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E505BE31D9988B400120F06 /* Assets.xcassets */; };
 		8E505BE71D9988B400120F06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E505BE51D9988B400120F06 /* LaunchScreen.storyboard */; };
 		8E505BF21D9988B400120F06 /* Bus_NappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BF11D9988B400120F06 /* Bus_NappTests.swift */; };
 		8E505BFD1D9988B400120F06 /* Bus_NappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505BFC1D9988B400120F06 /* Bus_NappUITests.swift */; };
+		8E505C0B1D99918900120F06 /* NewBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505C0A1D99918900120F06 /* NewBusViewController.swift */; };
+		8E505C111D99C83400120F06 /* MapViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E505C101D99C83400120F06 /* MapViewControllerDelegate.swift */; };
+		8E777AD91D9A214600A9A145 /* CancelButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E777AD81D9A214600A9A145 /* CancelButtonDelegate.swift */; };
+		8E777ADB1D9A25AF00A9A145 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E777ADA1D9A25AF00A9A145 /* SavedViewController.swift */; };
+		8E777AE11D9A344D00A9A145 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E777AE01D9A344D00A9A145 /* settings.png */; };
+		8E777AE51D9A372100A9A145 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E777AE41D9A372100A9A145 /* map.png */; };
+		8E777AE71D9A37A100A9A145 /* saved.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E777AE61D9A37A100A9A145 /* saved.png */; };
+		8E777B3A1D9B2D6100A9A145 /* LocationDetailsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E777B391D9B2D6100A9A145 /* LocationDetailsControllerDelegate.swift */; };
+		8E777B3C1D9B4F8200A9A145 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E777B3B1D9B4F8200A9A145 /* SoundViewController.swift */; };
+		8EF45F901D9DBBBA009DBF42 /* Paradise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8EF45F8F1D9DBBBA009DBF42 /* Paradise.wav */; };
+		8EF45F981D9EB9A1009DBF42 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF45F971D9EB9A1009DBF42 /* bus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +55,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75506FAA1D9B821D000850EB /* SongDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDelegate.swift; sourceTree = "<group>"; };
+		75506FAC1D9C4176000850EB /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		75506FAD1D9C4176000850EB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		75D3D7461D9EFF5400ED8853 /* Bells.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Bells.wav; path = "../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Bells.wav"; sourceTree = "<group>"; };
+		75D3D7481D9EFF6100ED8853 /* Elegant.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Elegant.wav; path = "../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Elegant.wav"; sourceTree = "<group>"; };
+		75D3D74A1D9EFF7A00ED8853 /* Loving You.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Loving You.wav"; path = "../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Loving You.wav"; sourceTree = "<group>"; };
+		75D3D74C1D9EFF8000ED8853 /* Soft.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Soft.wav; path = "../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Soft.wav"; sourceTree = "<group>"; };
+		75D3D74E1D9EFF9300ED8853 /* Sphere.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Sphere.wav; path = "../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Sphere.wav"; sourceTree = "<group>"; };
+		75D3D7501D9EFFDA00ED8853 /* Hotline Bling Marimba.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Hotline Bling Marimba.wav"; path = "../../../../Desktop/Hotline Bling Marimba.wav"; sourceTree = "<group>"; };
 		8E505BD61D9988B400120F06 /* Bus_Napp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bus_Napp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E505BD91D9988B400120F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E505BDB1D9988B400120F06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E505BDB1D9988B400120F06 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E505BDE1D9988B400120F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E505BE11D9988B400120F06 /* Bus_Napp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bus_Napp.xcdatamodel; sourceTree = "<group>"; };
 		8E505BE31D9988B400120F06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +78,17 @@
 		8E505BF81D9988B400120F06 /* Bus_NappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bus_NappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E505BFC1D9988B400120F06 /* Bus_NappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus_NappUITests.swift; sourceTree = "<group>"; };
 		8E505BFE1D9988B400120F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E505C0A1D99918900120F06 /* NewBusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBusViewController.swift; sourceTree = "<group>"; };
+		8E505C101D99C83400120F06 /* MapViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8E777AD81D9A214600A9A145 /* CancelButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelButtonDelegate.swift; sourceTree = "<group>"; };
+		8E777ADA1D9A25AF00A9A145 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		8E777AE01D9A344D00A9A145 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		8E777AE41D9A372100A9A145 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		8E777AE61D9A37A100A9A145 /* saved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saved.png; sourceTree = "<group>"; };
+		8E777B391D9B2D6100A9A145 /* LocationDetailsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsControllerDelegate.swift; sourceTree = "<group>"; };
+		8E777B3B1D9B4F8200A9A145 /* SoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
+		8EF45F8F1D9DBBBA009DBF42 /* Paradise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Paradise.wav; sourceTree = "<group>"; };
+		8EF45F971D9EB9A1009DBF42 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +119,8 @@
 		8E505BCD1D9988B400120F06 = {
 			isa = PBXGroup;
 			children = (
+				75506FAC1D9C4176000850EB /* Location+CoreDataProperties.swift */,
+				75506FAD1D9C4176000850EB /* Location.swift */,
 				8E505BD81D9988B400120F06 /* Bus_Napp */,
 				8E505BF01D9988B400120F06 /* Bus_NappTests */,
 				8E505BFB1D9988B400120F06 /* Bus_NappUITests */,
@@ -100,8 +142,26 @@
 			isa = PBXGroup;
 			children = (
 				8E505BD91D9988B400120F06 /* AppDelegate.swift */,
-				8E505BDB1D9988B400120F06 /* ViewController.swift */,
 				8E505BDD1D9988B400120F06 /* Main.storyboard */,
+				8EF45F8F1D9DBBBA009DBF42 /* Paradise.wav */,
+				75D3D7481D9EFF6100ED8853 /* Elegant.wav */,
+				75D3D74A1D9EFF7A00ED8853 /* Loving You.wav */,
+				75D3D7501D9EFFDA00ED8853 /* Hotline Bling Marimba.wav */,
+				75D3D74E1D9EFF9300ED8853 /* Sphere.wav */,
+				75D3D74C1D9EFF8000ED8853 /* Soft.wav */,
+				75D3D7461D9EFF5400ED8853 /* Bells.wav */,
+				8E777B3B1D9B4F8200A9A145 /* SoundViewController.swift */,
+				8E505BDB1D9988B400120F06 /* MapViewController.swift */,
+				8E505C0A1D99918900120F06 /* NewBusViewController.swift */,
+				8E777ADA1D9A25AF00A9A145 /* SavedViewController.swift */,
+				8E777B391D9B2D6100A9A145 /* LocationDetailsControllerDelegate.swift */,
+				75506FAA1D9B821D000850EB /* SongDelegate.swift */,
+				8E777AD81D9A214600A9A145 /* CancelButtonDelegate.swift */,
+				8E777AE01D9A344D00A9A145 /* settings.png */,
+				8E505C101D99C83400120F06 /* MapViewControllerDelegate.swift */,
+				8EF45F971D9EB9A1009DBF42 /* bus.png */,
+				8E777AE41D9A372100A9A145 /* map.png */,
+				8E777AE61D9A37A100A9A145 /* saved.png */,
 				8E505BE31D9988B400120F06 /* Assets.xcassets */,
 				8E505BE51D9988B400120F06 /* LaunchScreen.storyboard */,
 				8E505BE81D9988B400120F06 /* Info.plist */,
@@ -196,6 +256,12 @@
 				TargetAttributes = {
 					8E505BD51D9988B400120F06 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EL9YZC6M48;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					8E505BEC1D9988B400120F06 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -232,9 +298,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D3D74F1D9EFF9300ED8853 /* Sphere.wav in Resources */,
+				75D3D74D1D9EFF8000ED8853 /* Soft.wav in Resources */,
+				75D3D74B1D9EFF7A00ED8853 /* Loving You.wav in Resources */,
+				75D3D7471D9EFF5400ED8853 /* Bells.wav in Resources */,
+				8E777AE51D9A372100A9A145 /* map.png in Resources */,
+				8E777AE71D9A37A100A9A145 /* saved.png in Resources */,
+				75D3D7491D9EFF6100ED8853 /* Elegant.wav in Resources */,
+				8EF45F981D9EB9A1009DBF42 /* bus.png in Resources */,
+				8EF45F901D9DBBBA009DBF42 /* Paradise.wav in Resources */,
+				8E777AE11D9A344D00A9A145 /* settings.png in Resources */,
 				8E505BE71D9988B400120F06 /* LaunchScreen.storyboard in Resources */,
 				8E505BE41D9988B400120F06 /* Assets.xcassets in Resources */,
 				8E505BDF1D9988B400120F06 /* Main.storyboard in Resources */,
+				75D3D7511D9EFFDA00ED8853 /* Hotline Bling Marimba.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E777B3A1D9B2D6100A9A145 /* LocationDetailsControllerDelegate.swift in Sources */,
+				8E505C0B1D99918900120F06 /* NewBusViewController.swift in Sources */,
+				75506FAE1D9C4176000850EB /* Location+CoreDataProperties.swift in Sources */,
+				75506FAB1D9B821D000850EB /* SongDelegate.swift in Sources */,
+				8E777B3C1D9B4F8200A9A145 /* SoundViewController.swift in Sources */,
 				8E505BE21D9988B400120F06 /* Bus_Napp.xcdatamodeld in Sources */,
-				8E505BDC1D9988B400120F06 /* ViewController.swift in Sources */,
+				8E777AD91D9A214600A9A145 /* CancelButtonDelegate.swift in Sources */,
+				8E777ADB1D9A25AF00A9A145 /* SavedViewController.swift in Sources */,
+				8E505BDC1D9988B400120F06 /* MapViewController.swift in Sources */,
 				8E505BDA1D9988B400120F06 /* AppDelegate.swift in Sources */,
+				75506FAF1D9C4176000850EB /* Location.swift in Sources */,
+				8E505C111D99C83400120F06 /* MapViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,10 +491,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Bus_Napp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-Napp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -416,10 +506,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Bus_Napp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codingdojo.Bus-Napp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -488,6 +582,7 @@
 				8E505C031D9988B400120F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E505C041D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_NappTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +591,7 @@
 				8E505C061D9988B400120F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E505C071D9988B400120F06 /* Build configuration list for PBXNativeTarget "Bus_NappUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +600,7 @@
 				8E505C091D9988B400120F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
