@@ -17,17 +17,15 @@ class SoundViewController: UITableViewController {
     var selected = ""
     var test : Int?
     weak var delegate : SongDelegate?
-    
     var audioPlayer = AVAudioPlayer()
 
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sounds.count
     }
     
-    override func  tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SoundCell")!
-        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+    override func  tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SoundCell")!
+        cell.accessoryType = UITableViewCellAccessoryType.checkmark
         musicIndex = indexPath.row
         selected = sounds[indexPath.row]
         
@@ -37,25 +35,22 @@ class SoundViewController: UITableViewController {
     
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         if var book = songToEdit {
             book = selected
             delegate?.newSongController(self, didFinishAddingSong: book)
         }
-    
     }
-  
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SoundCell")!
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SoundCell")!
         cell.textLabel?.text = sounds[indexPath.row]
         if(indexPath.row == musicIndex)
         {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark;
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark;
         }
         else
         {
-            cell.accessoryType = UITableViewCellAccessoryType.None;
+            cell.accessoryType = UITableViewCellAccessoryType.none;
         }
 
         return cell
@@ -74,7 +69,6 @@ class SoundViewController: UITableViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -83,6 +77,4 @@ class SoundViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }

@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol CancelButtonDelegate: class {
-    func cancelButtonPressedFrom(controller: UIViewController)
+    func cancelButtonPressedFrom(_ controller: UIViewController)
 }

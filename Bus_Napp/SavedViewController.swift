@@ -18,10 +18,10 @@ class SavedViewController: UITableViewController, LocationDetailsControllerDeleg
     var locationToEdit: Location?
    
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
-    func cancelButtonPressedFrom(controller: UIViewController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func cancelButtonPressedFrom(_ controller: UIViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
     func saveLocation() {
@@ -35,7 +35,7 @@ class SavedViewController: UITableViewController, LocationDetailsControllerDeleg
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetchAllLocations()
         self.tableView.reloadData()
@@ -52,26 +52,26 @@ class SavedViewController: UITableViewController, LocationDetailsControllerDeleg
 
     
     func fetchAllLocations() {
-        let userRequest = NSFetchRequest(entityName: "Location")
+        let userRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
         do {
-            let results = try managedObjectContext.executeFetchRequest(userRequest)
+            let results = try managedObjectContext.fetch(userRequest)
             locations = results as! [Location]
         } catch {
             print ("\(error)")
         }
     }
     
-    func newBusViewController(controller: NewBusViewController, didFinishAddingLocation name: String) {
+    func newBusViewController(_ controller: NewBusViewController, didFinishAddingLocation name: String) {
         print("hey")
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editLocation" {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let controller = navigationController.topViewController as! NewBusViewController
             controller.cancelButtonDelegate = self
             controller.delegate = self
-            if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
                 controller.locationToEdit = locations[indexPath.row]
                 controller.locationToEditIndexPath = indexPath.row
                 controller.textForLabel = locations[indexPath.row].name
@@ -80,7 +80,7 @@ class SavedViewController: UITableViewController, LocationDetailsControllerDeleg
         }
     }
     
-    func newBusViewController(controller: NewBusViewController, didFinishEditingLocation location: Location) {
+    func newBusViewController(_ controller: NewBusViewController, didFinishEditingLocation location: Location) {
         location.distance = controller.finalDistance
         location.name = controller.nameTextField.text
         location.song = controller.SongCell.detailTextLabel?.text
@@ -90,26 +90,26 @@ class SavedViewController: UITableViewController, LocationDetailsControllerDeleg
         tableView.reloadData()
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locations.count
     }
    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("locationCell")!
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell")!
         cell.textLabel?.text = locations[indexPath.row].name
-         let switchView: UISwitch = UISwitch(frame: CGRectZero) as UISwitch
-        switchView.on = false
+         let switchView: UISwitch = UISwitch(frame: CGRect.zero) as UISwitch
+        switchView.isOn = false
           cell.accessoryView = switchView
         switchView.tag = indexPath.row
-        switchView.addTarget(self, action: #selector(SavedViewController.switchTriggered(_:)), forControlEvents: .ValueChanged );
+        switchView.addTarget(self, action: #selector(SavedViewController.switchTriggered(_:)), for: .valueChanged );
         if locations[indexPath.row].activated == true {
-            switchView.on = true
+            switchView.isOn = true
         }
         return cell
     }
    
-    func switchTriggered(sender: UISwitch) {
-        if sender.on == true {
+    func switchTriggered(_ sender: UISwitch) {
+        if sender.isOn == true {
             locations[sender.tag].activated = true
             if notifSong == nil {
                 notifSong = "Paradise"
@@ -140,9 +140,9 @@ class SavedViewController: UITableViewController, LocationDetailsControllerDeleg
 //        
 //    }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        let test = locations.removeAtIndex(indexPath.row)
-        self.managedObjectContext.deleteObject(test)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let test = locations.remove(at: indexPath.row)
+        self.managedObjectContext.delete(test)
         do {
             try managedObjectContext.save()
             print ("Success")

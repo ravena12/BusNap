@@ -13,11 +13,10 @@ import Foundation
 class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, SongDelegate {
     @IBOutlet weak var SongCell: UITableViewCell!
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
 
     var latitude: Double?
     var longitude: Double?
-    
     var songForLabel: String?
     var textForLabel: String?
     var locationToEdit: Location?
@@ -30,11 +29,11 @@ class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var nameTextField: UITextField!
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "textSegue" {
-            let songController = segue.destinationViewController as! SoundViewController
+            let songController = segue.destination as! SoundViewController
             songController.delegate = self
-            if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
             songController.songToEdit = sounds[indexPath.row]
             songController.songToEditIndexPath = indexPath.row
             }
@@ -43,17 +42,17 @@ class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPic
         
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("textSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "textSegue", sender: tableView.cellForRow(at: indexPath))
     }
     
     
-    func newSongController(controller: SoundViewController, didFinishAddingSong name: String) {
+    func newSongController(_ controller: SoundViewController, didFinishAddingSong name: String) {
         songName = name
     }
     
     
-    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         cancelButtonDelegate?.cancelButtonPressedFrom(self)
     }
     weak var cancelButtonDelegate: CancelButtonDelegate?
@@ -69,7 +68,7 @@ class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPic
     
     
     
-    @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if let location = locationToEdit {
             location.song = songName
             print("THIS IS SONG NAME", songName)
@@ -81,9 +80,9 @@ class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPic
             location.activated = (locationToEdit?.activated)!
             saveLocation()
             delegate?.newBusViewController(self, didFinishEditingLocation: location)
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         } else {
-            let newLocation = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+            let newLocation = NSEntityDescription.insertNewObject(forEntityName: "Location", into: managedObjectContext) as! Location
             newLocation.distance = finalDistance
             if nameTextField.text == "" {
                 newLocation.name = "Bus Stop"
@@ -95,8 +94,8 @@ class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPic
             newLocation.longitude = longitude!
             newLocation.activated = true
             saveLocation()
-            dismissViewControllerAnimated(true, completion: nil)
-            let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
+            dismiss(animated: true, completion: nil)
+            let appDelegate  = UIApplication.shared.delegate as! AppDelegate
             let tabBarController = appDelegate.window!.rootViewController as! UITabBarController
             tabBarController.selectedIndex = 1
         }
@@ -119,26 +118,26 @@ class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPic
 //    tabBarController.selectedIndex = 1
 //    
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return possibleDistances.count
     }
 
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return possibleDistances[component].count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return possibleDistances[component][row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let value = distancePicker.selectedRowInComponent(0)
-        let dec = Double(distancePicker.selectedRowInComponent(1))/4
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let value = distancePicker.selectedRow(inComponent: 0)
+        let dec = Double(distancePicker.selectedRow(inComponent: 1))/4
         let total = Double(value) + dec
         finalDistance = total
         print (finalDistance, "final distance")
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if var location = locationToEdit {
             if songName == nil {
                 SongCell.detailTextLabel!.text = songForLabel
@@ -170,7 +169,7 @@ class NewBusViewController: UITableViewController, UIPickerViewDataSource, UIPic
         nameTextField.text = textForLabel
         distancePicker.dataSource = self
         distancePicker.delegate = self
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "ex: work, home", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "ex: work, home", attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         super.viewDidLoad()
     }
 }

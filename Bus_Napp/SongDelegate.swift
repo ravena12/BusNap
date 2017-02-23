@@ -12,5 +12,5 @@ import UIKit
 
 protocol SongDelegate: class {
     
-    func newSongController(controller: SoundViewController, didFinishAddingSong book: String)
+    func newSongController(_ controller: SoundViewController, didFinishAddingSong book: String)
 }

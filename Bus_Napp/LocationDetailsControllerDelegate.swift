@@ -11,6 +11,6 @@ import UIKit
 
 protocol LocationDetailsControllerDelegate: class {
     
-    func newBusViewController(controller: NewBusViewController, didFinishAddingLocation name: String)
-    func newBusViewController(controller: NewBusViewController, didFinishEditingLocation location: Location)
+    func newBusViewController(_ controller: NewBusViewController, didFinishAddingLocation name: String)
+    func newBusViewController(_ controller: NewBusViewController, didFinishEditingLocation location: Location)
 }

@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol MapViewControllerDelegate: class {
-    func mapViewController(controller: MapViewController, didPressAddButton latitude: Double, longitude: Double)
+    func mapViewController(_ controller: MapViewController, didPressAddButton latitude: Double, longitude: Double)
 }

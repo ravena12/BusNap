@@ -39,14 +39,14 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     var longitude = Double()
     var latitude = Double()
 //    var name = String()
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
 
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         longitude = (view.annotation?.coordinate.longitude)!
         latitude = (view.annotation?.coordinate.latitude)!
     }
     
-    func placeItemOnMap(item: MKMapItem) {
+    func placeItemOnMap(_ item: MKMapItem) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = item.placemark.coordinate
         annotation.title = item.name
@@ -59,7 +59,7 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
         request.region = mapView.region
         
         let search = MKLocalSearch (request: request)
-        search.startWithCompletionHandler({
+        search.start(completionHandler: {
             response, error in
             if error != nil {
             } else {
@@ -72,10 +72,10 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
         })
     }
     
-    func newBusViewController(controller: NewBusViewController, didFinishAddingLocation name: String) {
+    func newBusViewController(_ controller: NewBusViewController, didFinishAddingLocation name: String) {
         print("hey")
     }
-    func newBusViewController(controller: NewBusViewController, didFinishEditingLocation name: String) {
+    func newBusViewController(_ controller: NewBusViewController, didFinishEditingLocation name: String) {
         print("hey2")
     }
     
@@ -84,22 +84,22 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
         fetchAllLocations()
          UITabBar.appearance().barTintColor = UIColor(red: 35/255, green: 183/255, blue: 166/255, alpha: 1.0)
         dLabel.layer.borderWidth = 0.5
-        dLabel.layer.borderColor = UIColor.blackColor().CGColor
+        dLabel.layer.borderColor = UIColor.black.cgColor
         
-        let image = UIImage(named: "bus")?.CGImage
-        busImage = UIImage(CGImage: image!, scale: 4.0, orientation: UIImageOrientation(rawValue: 1)!)
+        let image = UIImage(named: "bus")?.cgImage
+        busImage = UIImage(cgImage: image!, scale: 4.0, orientation: UIImageOrientation(rawValue: 1)!)
         switchO.layer.cornerRadius = 16 
         mapView.delegate = self
         self.mapView.showsUserLocation = true
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MapViewController.addAnnotation(_:)))
 //        gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
     }
@@ -115,7 +115,7 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     var startLocation:CLLocation!
     var lastLocation = CLLocation()
     var check3: Bool?
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if startLocation == nil {
             startLocation = locations.first!
              center(locations)
@@ -128,23 +128,24 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
         search()
         math()
         fetchAllLocations()
-        var state = UIApplication.sharedApplication().applicationState
-        if state == .Background {
+        let state = UIApplication.shared.applicationState
+        if state == .background {
             print("App in Background")
             check3 = false
         }
-        if state == .Active {
+        if state == .active {
             print("App is active!")
             print(check3)
             check3 = true
         }
+       view.setNeedsDisplay()
 
     }
     
     var tracker: Bool?
     
-    @IBAction func trackerButtonPressed(sender: UISwitch) {
-        if sender.on == true {
+    @IBAction func trackerButtonPressed(_ sender: UISwitch) {
+        if sender.isOn == true {
             print(true)
             tracker = true
         } else {
@@ -180,18 +181,18 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     func check() {
         if songplay == 1 && check3 == true {
             play()
-            let alertController = UIAlertController(title: "Alarm!", message: "Wake Up!", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+            let alertController = UIAlertController(title: "Alarm!", message: "Wake Up!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                 UIAlertAction in
                 print("OK Pressed")
                 self.set()
                 self.audioPlayer.stop()
             }
             alertController.addAction(okAction)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
         if songplay == 1 && check3 == false {
-            let pushTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("pushNotification"), userInfo: nil, repeats: false)
+            let pushTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(MapViewController.pushNotification), userInfo: nil, repeats: false)
             self.set()
         }
         }
@@ -215,8 +216,8 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
                     songplay += 1
                     check()
                     print("WAKE UP WAKE UP WAKE UP ")
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+//                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+//                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 }
             }
             print(item.activated, "ACTIVATED??")
@@ -240,7 +241,7 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     }
     
         func math () {
-        var distance = lastLocation.distanceFromLocation(test) * 0.000621371
+        let distance = lastLocation.distance(from: test) * 0.000621371
         print(distance, "DISTANCE FROM BUS ")
             for item in locations2 {
                 if item.activated == true {
@@ -265,9 +266,9 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     }
     
     func fetchAllLocations() {
-        let userRequest = NSFetchRequest(entityName: "Location")
+        let userRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
         do {
-            let results = try managedObjectContext.executeFetchRequest(userRequest) as! [Location]
+            let results = try managedObjectContext.fetch(userRequest) as! [Location]
             locations2 = results
             print(locations2)
         } catch {
@@ -276,7 +277,7 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     }
 
     var counter = Int()
-    func center(locations : [CLLocation]) {
+    func center(_ locations : [CLLocation]) {
         counter += 1
         let location = locations.first
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
@@ -285,9 +286,9 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     }
 
     
-    func addAnnotation(gestureRecognizer: UILongPressGestureRecognizer) {
-        let location = gestureRecognizer.locationInView(mapView)
-        let coordinate = mapView.convertPoint(location, toCoordinateFromView: mapView)
+    func addAnnotation(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        let location = gestureRecognizer.location(in: mapView)
+        let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
         //Add Annotation
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
@@ -297,34 +298,34 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
     
  
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let view = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         if annotation is MKUserLocation {
             return nil
         } else {
         view.image = busImage
         view.canShowCallout = true
-        view.rightCalloutAccessoryView = UIButton(type: UIButtonType.ContactAdd)
+        view.rightCalloutAccessoryView = UIButton(type: UIButtonType.contactAdd)
              return view
         }
         
 //        return view
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if (control as? UIButton)?.buttonType == UIButtonType.ContactAdd {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if (control as? UIButton)?.buttonType == UIButtonType.contactAdd {
             mapView.deselectAnnotation(view.annotation, animated: false)
-            performSegueWithIdentifier("addLocation", sender: view)
+            performSegue(withIdentifier: "addLocation", sender: view)
         }
     }
     
-    func cancelButtonPressedFrom(controller: UIViewController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func cancelButtonPressedFrom(_ controller: UIViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addLocation" {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let controller = navigationController.topViewController as! NewBusViewController
             controller.latitude = latitude
             controller.longitude = longitude
@@ -334,16 +335,16 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
             controller.cancelButtonDelegate = self
         }
     }
-    func someFunction(delta: Int) {
+    func someFunction(_ delta: Int) {
         if delta < 100 {
             // Send alert to user if app is open
-            let alertView = UIAlertController(title: "This is an Alert!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alertView, animated: true, completion: nil)
+            let alertView = UIAlertController(title: "This is an Alert!", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertView, animated: true, completion: nil)
         } else {
             
             // Send user a local notification if they have the app running in the bg
-           let pushTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("pushNotification"), userInfo: nil, repeats: false)
+           let pushTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(MapViewController.pushNotification), userInfo: nil, repeats: false)
         }
     }
     
@@ -352,10 +353,10 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
         let notification = UILocalNotification()
         notification.alertAction = "Go back to App"
         notification.alertBody = "Wake Up! Your Bus Stop is Approaching!"
-        notification.fireDate = NSDate(timeIntervalSinceNow: 1)
+        notification.fireDate = Date(timeIntervalSinceNow: 1)
         notification.applicationIconBadgeNumber = 1;
         notification.soundName  = notifSong + ".wav"
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        UIApplication.shared.scheduleLocalNotification(notification)
     }
     
 
