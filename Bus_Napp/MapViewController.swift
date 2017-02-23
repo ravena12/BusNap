@@ -354,7 +354,6 @@ class MapViewController: UIViewController,  MKMapViewDelegate, CLLocationManager
         notification.alertAction = "Go back to App"
         notification.alertBody = "Wake Up! Your Bus Stop is Approaching!"
         notification.fireDate = Date(timeIntervalSinceNow: 1)
-        notification.applicationIconBadgeNumber = 1;
         notification.soundName  = notifSong + ".wav"
         UIApplication.shared.scheduleLocalNotification(notification)
     }
